@@ -3,6 +3,8 @@ const path = require('path');
 
 const app = express();
 
+app.use(express.static(__dirname)); // permite accesul la script.js și alte fișiere statice
+
 // Servește fișiere statice din public
 app.use(express.static(path.join(__dirname, 'public')));
 
