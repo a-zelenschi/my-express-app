@@ -49,26 +49,7 @@
   <button id="switchSnake">Apasă-mă să trecem la jocul Snake</button>
   <div id="message">Mesajul serverului va apărea aici.</div>
 
-  <script>
-    const btn = document.getElementById('fetchBtn');
-    const messageDiv = document.getElementById('message');
-    const switchSnakeBtn = document.getElementById('switchSnake');
-
-
-    switchSnakeBtn.addEventListener('click', () => {
-    window.location.href = '/snake'; // redirecționează către ruta serverului
-});
-
-
-    btn.addEventListener('click', async () => {
-      try {
-        const response = await fetch('/salut'); // cerere către server
-        const text = await response.text();
-        messageDiv.textContent = text;
-      } catch (err) {
-        messageDiv.textContent = 'Eroare: Nu se poate contacta serverul';
-      }
-    });
-  </script>
+  <!-- Legăm fișierul JS separat -->
+  <script src="/script.js"></script>
 </body>
 </html>
