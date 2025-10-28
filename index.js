@@ -24,7 +24,7 @@ app.get('/test', (req, res) => {
 
 
 
-// Pornim serverul pe portul 3000
-app.listen(3000, () => {
-  console.log('Serverul rulează pe http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Serverul rulează pe portul ${PORT}`);
 });
