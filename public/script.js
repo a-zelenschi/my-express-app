@@ -10,7 +10,7 @@ switchSnakeBtn.addEventListener('click', () => {
 // Buton pentru mesaj de salut
 btn.addEventListener('click', async () => {
   try {
-    const response = await fetch('/salut'); // cerere către server
+    const response = await fetch('https://my-express-app-4mb3.onrender.com/salut'); // cerere către server
     const text = await response.text();
     messageDiv.textContent = text;
   } catch (err) {
