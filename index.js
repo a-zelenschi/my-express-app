@@ -3,9 +3,7 @@ const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname)); // permite accesul la script.js și alte fișiere statice
-
-// Servește fișiere statice din public
+// Servește fișiere statice din folderul public
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Rute
@@ -19,6 +17,11 @@ app.get('/snake', (req, res) => {
 
 app.get('/test', (req, res) => {
   res.send('Acesta este un test!');
+});
+
+// 🔹 Ruta pentru fetch salut
+app.get('/salut', (req, res) => {
+  res.send('Salut! Mesajul a venit de la server.');
 });
 
 const PORT = process.env.PORT || 3000;
