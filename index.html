@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Express UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      transition: background-color 0.3s;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Server Express UI</h1>
+  <button id="fetchBtn">Apasă-mă pentru salut</button>
+  <button id="switchSnake">Apasă-mă să trecem la jocul Snake</button>
+  <div id="message">Mesajul serverului va apărea aici.</div>
+
+  <script>
+    const btn = document.getElementById('fetchBtn');
+    const messageDiv = document.getElementById('message');
+    const switchSnakeBtn = document.getElementById('switchSnake');
+
+
+    switchSnakeBtn.addEventListener('click', () => {
+    window.location.href = '/snake'; // redirecționează către ruta serverului
+});
+
+
+    btn.addEventListener('click', async () => {
+      try {
+        const response = await fetch('/salut'); // cerere către server
+        const text = await response.text();
+        messageDiv.textContent = text;
+      } catch (err) {
+        messageDiv.textContent = 'Eroare: Nu se poate contacta serverul';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "my-express-app",
+  "version": "1.0.0",
+  "description": "Server Express cu UI simplu",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "ui"
+  ],
+  "author": "Andrei Zelenschi",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
